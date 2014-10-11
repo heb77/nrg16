@@ -11,4 +11,32 @@
   <artifactId>ch.heb.nrg16.desktop</artifactId>
   <packaging>jar</packaging>
 
+  <dependencies>
+      <dependency>
+          <groupId>ch.heb.nrg16</groupId>
+          <artifactId>ch.heb.nrg16.application</artifactId>
+          <version>1.0-SNAPSHOT</version>
+      </dependency>
+  </dependencies>
+  
+   <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptors>
+                        <descriptor>./assembly.xml</descriptor>
+                    </descriptors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

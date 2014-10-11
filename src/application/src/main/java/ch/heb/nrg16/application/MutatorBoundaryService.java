@@ -1,8 +1,8 @@
-package ch.heb.nrg16;
+package ch.heb.nrg16.application;
 
 import org.apache.log4j.Logger;
 
-import ch.heb.nrg16.persistency.PersistencyAdapter;
+import ch.heb.nrg16.application.persistency.PersistencyAdapter;
 
 /**
  * <code>MutatorBoundary</code> provides entry point to Application layer
@@ -24,12 +24,11 @@ public class MutatorBoundaryService {
 	    persistencyAdapter = new PersistencyAdapter();
 	}
 	
-	public void addEntry(){
+	public EntryId addEntry(EnergyVO energyVO){
 	    log.debug("started ...");
-		
-	    persistencyAdapter.storeEntry();
-	    
-	    log.debug("... finished.");
+	    EntryId newid = persistencyAdapter.storeEntry(energyVO);
+	    log.debug("... finished, id : " + newid);
+	    return newid;
 	}
 	
 	public void modifyEntry(){
