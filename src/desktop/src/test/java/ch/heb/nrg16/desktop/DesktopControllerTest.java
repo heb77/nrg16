@@ -20,7 +20,7 @@ public class DesktopControllerTest {
         log.debug("started ...");
         
         DesktopController dc = new DesktopController();
-        dc.actionSave();
+//        dc.actionSave();
         
         log.debug("... finished.");
     }
